@@ -11,37 +11,21 @@ import org.apache.commons.io.FilenameUtils;
 
 import myexception.MyException;
 
-public class FetchConfigProperties {
+public class LoadConfigProperties {
 
 	private String lFilePath;
 	private String lFileName;
 
 	private Properties properties;
-	
+
 	/* <---------- Constructor Loads Configuration Properties ---------> */
 	/* Property File Path */
 	/* Property File Name */
-	public FetchConfigProperties(String propertyFilePath, String propertyFileName) throws MyException {
-		if (!propertyFilePath.isEmpty()) {
-			this.lFilePath = propertyFilePath;
-			if (!propertyFileName.isEmpty()) {
-				if (FilenameUtils.getExtension(propertyFileName).equals("properties")) {
-					this.lFileName = propertyFileName;
-				} else {
-					throw new MyException("Config Properties : File extension is incorrect");
-				}
-			} else {
-				throw new MyException("Config Properties : File name is empty");
-			}
-		} else {
-			throw new MyException("Config Properties : File path is empty");
-		}
-		try {
-			this.properties = new Properties();
-			this.properties.load(new FileInputStream(this.lFilePath + this.lFileName));
-		} catch (IOException e) {
-			throw new MyException("Unable to find:" + this.lFileName + "\n" + e.getMessage());
-		}
+	public LoadConfigProperties(String propertyFilePath, String propertyFileName) throws MyException {
+		verify(propertyFilePath, propertyFileName, "properties");
+		this.lFilePath = propertyFilePath;
+		this.lFileName = propertyFileName;
+		loadProperties();
 	}
 
 	/* <---------- Get Specific Value For Given Key ---------> */
@@ -76,6 +60,37 @@ public class FetchConfigProperties {
 			throw new MyException("Property Key set is null");
 		}
 		return this.properties.keySet();
+	}
+
+	private void loadProperties() throws MyException {
+		try {
+			initializeProperties();
+			this.properties.load(new FileInputStream(this.lFilePath + this.lFileName));
+		} catch (IOException e) {
+			throw new MyException("Unable to find:" + this.lFileName + "\n" + e.getMessage());
+		}
+	}
+
+	private void initializeProperties() {
+		this.properties = new Properties();
+	}
+
+	public static boolean verify(String filePath, String fileName, String fileExtension) throws MyException {
+		boolean flag = false;
+		if (!filePath.isEmpty()) {
+			if (!fileName.isEmpty()) {
+				if (FilenameUtils.getExtension(fileName).equals(fileExtension)) {
+					flag = true;
+				} else {
+					throw new MyException(fileName + " " + "File extension is incorrect");
+				}
+			} else {
+				throw new MyException("File name is empty");
+			}
+		} else {
+			throw new MyException("File path is empty");
+		}
+		return flag;
 	}
 
 }
