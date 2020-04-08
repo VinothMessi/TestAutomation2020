@@ -5,8 +5,10 @@ import java.util.Map;
 
 import exception.MyException;
 
+import static constants.Constants.*;
+
 public class HoldConfigProperties {
-	
+
 	/* <---------- Map To Hold All Properties ---------> */
 	public final Map<String, String> properties = new HashMap<>();
 
@@ -24,12 +26,10 @@ public class HoldConfigProperties {
 		}
 		return singleInstance;
 	}
-	
+
 	/* <---------- Put All The Properties Inside A Map ---------> */
 	private void getAll() throws MyException {
-		LoadConfigProperties loadProperties = new LoadConfigProperties(
-				"C:\\Automation_Testing_2020\\myProjects\\AutomationTesting2020\\resources\\config\\",
-				"config.properties");
+		LoadConfigProperties loadProperties = new LoadConfigProperties(CONFIG_FILE_PATH, CONFIG_FILE_NAME);
 		properties.putAll(loadProperties.fetchAll());
 	}
 
