@@ -1,4 +1,4 @@
-package config;
+package properties;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FilenameUtils;
 
-import myexception.MyException;
+import exception.MyException;
 
 public class LoadConfigProperties {
 
