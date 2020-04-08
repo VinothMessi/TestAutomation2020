@@ -13,11 +13,8 @@ public class LocalDriver implements IDriver {
 	private String lDriverFilePath;
 
 	public LocalDriver(String driverFilePath) throws MyException {
-		if (!driverFilePath.isEmpty()) {
-			this.lDriverFilePath = driverFilePath;
-		} else {
-			throw new MyException("Driver File Path Is Empty");
-		}
+		verify(driverFilePath);
+		this.lDriverFilePath = driverFilePath;
 	}
 
 	/* <---------- Launching Local Browser Session ---------> */
@@ -55,6 +52,16 @@ public class LocalDriver implements IDriver {
 		default:
 			throw new MyException("Bowser : " + browserName + " Not Supported");
 		}
+	}
+	
+	private static boolean verify(String filePath) throws MyException {
+		boolean flag = false;
+		if (!filePath.isEmpty()) {
+			flag = true;
+		} else {
+			throw new MyException("Driver File Path Is Empty");
+		}
+		return flag;
 	}
 
 }

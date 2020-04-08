@@ -17,11 +17,8 @@ public class RemoteDriver implements IDriver {
 	String remoteHUBURL;
 
 	public RemoteDriver(String hubURL) throws MyException {
-		if (!hubURL.isEmpty()) {
-			this.remoteHUBURL = hubURL;
-		} else {
-			throw new MyException("Driver File Path Is Empty");
-		}
+		verify(hubURL);
+		this.remoteHUBURL = hubURL;
 	}
 
 	/* <---------- Launching Remote Browser Session ---------> */
@@ -42,6 +39,16 @@ public class RemoteDriver implements IDriver {
 		} else {
 			throw new MyException("Browser Name Is Empty");
 		}
+	}
+
+	private static boolean verify(String hubURL) throws MyException {
+		boolean flag = false;
+		if (!hubURL.isEmpty()) {
+			flag = true;
+		} else {
+			throw new MyException("Hub URL Is Empty");
+		}
+		return flag;
 	}
 
 }

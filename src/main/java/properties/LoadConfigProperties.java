@@ -75,7 +75,7 @@ public class LoadConfigProperties {
 		this.properties = new Properties();
 	}
 
-	public static boolean verify(String filePath, String fileName, String fileExtension) throws MyException {
+	private static boolean verify(String filePath, String fileName, String fileExtension) throws MyException {
 		boolean flag = false;
 		if (!filePath.isEmpty()) {
 			if (!fileName.isEmpty()) {
