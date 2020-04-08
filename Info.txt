@@ -1,0 +1,8 @@
+TestNg is installed to eclipse using:
+http://dl.bintray.com/testng-team/testng-eclipse-release/
+
+Update GIT in windows:
+git update-git-for-windows
+
+Common IO dependancy is needed for:
+FilenameUtils.getExtension(FileName)
