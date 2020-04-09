@@ -3,6 +3,7 @@ package pages;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,10 +38,46 @@ public class BasePage {
 		}
 	}
 
+	public void maximize() throws MyException {
+		try {
+			lDriver.manage().window().maximize();
+		} catch (Exception e) {
+			throw new MyException("Unable to maximize browser page");
+		}
+	}
+
+	public void waitImplicitlyFor(int timeInSecs, String timeUnit) throws MyException {
+		try {
+			if (timeUnit.equals(SECOND)) {
+				lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.SECONDS);
+			} else if (timeUnit.equals(MILLISECOND)) {
+				lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.MILLISECONDS);
+			} else if (timeUnit.equals(MINUTE)) {
+				lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.MINUTES);
+			}
+		} catch (Exception e) {
+			throw new MyException("Unable to wait implicitly for:" + timeInSecs + "secs");
+		}
+	}
+
+	public void waitTillPageLoadsFor(int timeInSecs, String timeUnit) throws MyException {
+		try {
+			if (timeUnit.equals(SECOND)) {
+				lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.SECONDS);
+			} else if (timeUnit.equals(MILLISECOND)) {
+				lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.MILLISECONDS);
+			} else if (timeUnit.equals(MINUTE)) {
+				lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.MINUTES);
+			}
+		} catch (Exception e) {
+			throw new MyException("Unable to wait till page loads for:" + timeInSecs + "secs");
+		}
+	}
+
 	/* <---------- Find Element ---------> */
 	/* Parameter : Locator */
 	/* @return WebElement */
-	protected WebElement identify(By locator) throws MyException {
+	public WebElement identify(By locator) throws MyException {
 		WebElement element = null;
 		try {
 			element = lDriver.findElement(locator);
@@ -53,7 +90,7 @@ public class BasePage {
 	/* <---------- Find Elements ---------> */
 	/* Parameter : Locator */
 	/* @return List of WebElement */
-	protected List<WebElement> identifyAll(By locator) throws MyException {
+	public List<WebElement> identifyAll(By locator) throws MyException {
 		List<WebElement> list = null;
 		try {
 			list = lDriver.findElements(locator);
@@ -65,7 +102,7 @@ public class BasePage {
 
 	/* <---------- Get Page Title ---------> */
 	/* @return Title of the current web page */
-	protected String getPageTitle() throws MyException {
+	public String getPageTitle() throws MyException {
 		String pageTitle = "";
 		try {
 			pageTitle = lDriver.getTitle();
@@ -77,7 +114,7 @@ public class BasePage {
 
 	/* <---------- Get Current URL ---------> */
 	/* @return URL of the current web page */
-	protected String getURL() throws MyException {
+	public String getURL() throws MyException {
 		String url = "";
 		try {
 			url = lDriver.getCurrentUrl();
@@ -88,7 +125,7 @@ public class BasePage {
 	}
 
 	/* <---------- Navigate one step back in current web page ---------> */
-	protected void navigateBrowserBack() throws MyException {
+	public void navigateBrowserBack() throws MyException {
 		try {
 			lDriver.navigate().back();
 		} catch (Exception e) {
@@ -97,7 +134,7 @@ public class BasePage {
 	}
 
 	/* <---------- Navigate one step forward in current web page ---------> */
-	protected void navigateBrowserForward() throws MyException {
+	public void navigateBrowserForward() throws MyException {
 		try {
 			lDriver.navigate().forward();
 		} catch (Exception e) {
@@ -106,7 +143,7 @@ public class BasePage {
 	}
 
 	/* <---------- Refresh current web page ---------> */
-	protected void refresh() throws MyException {
+	public void refresh() throws MyException {
 		try {
 			lDriver.navigate().refresh();
 		} catch (Exception e) {
@@ -117,7 +154,7 @@ public class BasePage {
 	/* <---------- Verify Element Present or Not ---------> */
 	/* Parameter : Locator */
 	/* @return True (or) False */
-	protected boolean isElementPresent(By locator) throws MyException {
+	public boolean isElementPresent(By locator) throws MyException {
 		List<WebElement> list = null;
 		try {
 			list = identifyAll(locator);
@@ -138,7 +175,7 @@ public class BasePage {
 	 */
 	/* Parameter : Locator and Verification Type */
 	/* @return True (or) False */
-	protected boolean check(By locator, String verificationType) throws MyException {
+	public boolean check(By locator, String verificationType) throws MyException {
 		try {
 			if (lDriver.findElements(locator).size() > 0) {
 				lWait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -168,7 +205,7 @@ public class BasePage {
 	 * <---------- Select Element ByVisibleText (or) ByValue (or) ByIndex --------->
 	 */
 	/* Parameter : Locator, Choice type and Value */
-	protected void choose(String choiceType, String value, By locator) throws MyException {
+	public void choose(String choiceType, String value, By locator) throws MyException {
 		Select dropDown;
 		try {
 			dropDown = new Select(identify(locator));
@@ -189,7 +226,7 @@ public class BasePage {
 
 	/* <---------- Click On WebElement ---------> */
 	/* Parameter : Locator */
-	protected void clickOn(By locator) throws MyException {
+	public void clickOn(By locator) throws MyException {
 		try {
 			if (isElementPresent(locator) == true) {
 				lWait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -215,7 +252,7 @@ public class BasePage {
 
 	/* <---------- SendKeys for to type ---------> */
 	/* Parameter : Locator and Text */
-	protected void type(String text, By locator) throws MyException {
+	public void type(String text, By locator) throws MyException {
 		try {
 			if (isElementPresent(locator) == true) {
 				identify(locator).clear();
@@ -242,7 +279,7 @@ public class BasePage {
 	/* <---------- Get Text From WebElement ---------> */
 	/* Parameter : Locator */
 	/* @return String : Text from element */
-	protected String getTextFrom(By locator) throws MyException {
+	public String getTextFrom(By locator) throws MyException {
 		String text = null;
 		try {
 			text = identify(locator).getText();
@@ -368,30 +405,18 @@ public class BasePage {
 		}
 	}
 
-	/* <---------- Create snap shot directory with time stamp ---------> */
-	/* Parameter : Snap shot path */
-	protected String createSnapShotDirectory(String snapShotPath) throws MyException {
-		String screenshotDir = "";
-		try {
-			screenshotDir = snapShotPath + "//" + "snapShots" + "_" + Util.getCurrentDateTime();
-			new File(screenshotDir).mkdirs();
-		} catch (Exception e) {
-			throw new MyException("Unable to create snap shot directory:" + screenshotDir);
-		}
-		return screenshotDir;
-	}
-
 	/* <---------- Take a snap shot of the entire Browser page ---------> */
 	/* Parameter : Snap shot directory and Snap shot file name */
-	protected String takeASnapAndSaveAs(String snapShotDirectory, String snapShotName) throws IOException, MyException {
+	public String takeASnapAndSaveAs(String snapShotDirectory, String snapShotName) throws IOException, MyException {
 		String path = "";
 		try {
-			path = createSnapShotDirectory(snapShotDirectory) + "//" + snapShotName;
+			Util.verify(snapShotDirectory, snapShotName, "png");
+			path = snapShotDirectory + "//" + snapShotName;
 			File sImage = ((TakesScreenshot) lDriver).getScreenshotAs(OutputType.FILE);
 			File dImage = new File(path);
 			FileHandler.copy(sImage, dImage);
 		} catch (Exception e) {
-			throw new MyException("Unable to take a snap shot and save it as" + snapShotName);
+			throw new MyException("Unable to take a snap shot and save it as:" + snapShotName + "\n" + e.getMessage());
 		}
 		return path;
 	}

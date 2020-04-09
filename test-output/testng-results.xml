@@ -2,16 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1919" started-at="2020-04-08T20:29:49 IST" finished-at="2020-04-08T20:29:50 IST">
+  <suite name="Default suite" duration-ms="8071" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:58:07 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1919" started-at="2020-04-08T20:29:49 IST" finished-at="2020-04-08T20:29:50 IST">
-      <class name="roughwork.SampleTest">
-        <test-method status="PASS" signature="TC()[pri:0, instance:roughwork.SampleTest@4bbfb90a]" name="TC" duration-ms="1890" started-at="2020-04-08T20:29:49 IST" finished-at="2020-04-08T20:29:50 IST">
+    <test name="Default test" duration-ms="8071" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:58:07 IST">
+      <class name="testcases.SanityTest">
+        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:testcases.SanityTest@614ddd49]" name="suiteSetUp" is-config="true" duration-ms="17" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:57:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC -->
-      </class> <!-- roughwork.SampleTest -->
+        </test-method> <!-- suiteSetUp -->
+        <test-method status="PASS" signature="beforeEachTestClass()[pri:0, instance:testcases.SanityTest@614ddd49]" name="beforeEachTestClass" is-config="true" duration-ms="1" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:57:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachTestClass -->
+        <test-method status="PASS" signature="beforeEachTestCase()[pri:0, instance:testcases.SanityTest@614ddd49]" name="beforeEachTestCase" is-config="true" duration-ms="1911" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:58:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachTestCase -->
+        <test-method status="PASS" signature="sanityTest()[pri:0, instance:testcases.SanityTest@614ddd49]" name="sanityTest" duration-ms="1807" started-at="2020-04-09T20:58:01 IST" finished-at="2020-04-09T20:58:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sanityTest -->
+        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest@614ddd49]" name="afterEachTestCase" is-config="true" duration-ms="4330" started-at="2020-04-09T20:58:03 IST" finished-at="2020-04-09T20:58:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTestCase -->
+      </class> <!-- testcases.SanityTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -4,12 +4,18 @@ import com.google.common.collect.Ordering;
 
 import exception.MyException;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FilenameUtils;
+
 public class Util {
+
+	private Util() {
+	}
 
 	public static void sleep(long msec) throws MyException {
 		try {
@@ -44,7 +50,7 @@ public class Util {
 		return date;
 	}
 
-	public boolean verifyTextContains(String actualText, String expText) throws MyException {
+	public static boolean verifyTextContains(String actualText, String expText) throws MyException {
 		boolean flag = false;
 		try {
 			if (actualText.toLowerCase().contains(expText.toLowerCase())) {
@@ -57,7 +63,7 @@ public class Util {
 		return flag;
 	}
 
-	public boolean verifyTextMatch(String actualText, String expText) throws MyException {
+	public static boolean verifyTextMatch(String actualText, String expText) throws MyException {
 		boolean flag = false;
 		try {
 			if (actualText.equals(expText)) {
@@ -70,7 +76,7 @@ public class Util {
 		return flag;
 	}
 
-	public Boolean verifyListContains(List<String> actList, List<String> expList) throws MyException {
+	public static Boolean verifyListContains(List<String> actList, List<String> expList) throws MyException {
 		try {
 			int expListSize = expList.size();
 			for (int i = 0; i < expListSize; i++) {
@@ -85,7 +91,7 @@ public class Util {
 		return true;
 	}
 
-	public Boolean verifyListMatch(List<String> actList, List<String> expList) throws MyException {
+	public static Boolean verifyListMatch(List<String> actList, List<String> expList) throws MyException {
 		boolean found = false;
 		try {
 			int actListSize = actList.size();
@@ -113,7 +119,7 @@ public class Util {
 		return found;
 	}
 
-	public Boolean verifyItemPresentInList(List<String> actList, String item) throws MyException {
+	public static Boolean verifyItemPresentInList(List<String> actList, String item) throws MyException {
 		try {
 			int actListSize = actList.size();
 			for (int i = 0; i < actListSize; i++) {
@@ -128,7 +134,7 @@ public class Util {
 		return true;
 	}
 
-	public boolean isListAscendingOrder(List<Long> list) throws MyException {
+	public static boolean isListAscendingOrder(List<Long> list) throws MyException {
 		boolean sorted = false;
 		try {
 			sorted = Ordering.natural().isOrdered(list);
@@ -136,6 +142,35 @@ public class Util {
 			throw new MyException("Unable to verify wether the given list: " + list + " " + "is in ascending order");
 		}
 		return sorted;
+	}
+
+	public static String createDirectory(String rootDirectory, String directoryToBeCreated) throws MyException {
+		String dir = "";
+		try {
+			dir = rootDirectory + "//" + directoryToBeCreated + "_" + Util.getCurrentDateTime();
+			new File(dir).mkdirs();
+		} catch (Exception e) {
+			throw new MyException("Unable to create new directory:" + dir);
+		}
+		return dir;
+	}
+	
+	public static boolean verify(String filePath, String fileName, String fileExtension) throws MyException {
+		boolean flag = false;
+		if (!filePath.isEmpty()) {
+			if (!fileName.isEmpty()) {
+				if (FilenameUtils.getExtension(fileName).equals(fileExtension)) {
+					flag = true;
+				} else {
+					throw new MyException(fileName + " " + "File extension is incorrect");
+				}
+			} else {
+				throw new MyException("File name is empty");
+			}
+		} else {
+			throw new MyException("File path is empty");
+		}
+		return flag;
 	}
 
 }

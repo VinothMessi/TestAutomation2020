@@ -3,11 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="roughwork.SampleTest">
+      <class name="base.BaseTest">
         <methods>
-          <include name="TC"/>
+          <include name="beforeEachTestClass"/>
+          <include name="beforeEachTestCase"/>
+          <include name="suiteSetUp"/>
+          <include name="suiteTearDown"/>
+          <include name="afterEachTestClass"/>
+          <include name="sanityTest"/>
+          <include name="afterEachTestCase"/>
         </methods>
-      </class> <!-- roughwork.SampleTest -->
+      </class> <!-- base.BaseTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

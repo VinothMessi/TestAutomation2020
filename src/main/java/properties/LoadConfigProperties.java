@@ -7,9 +7,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import org.apache.commons.io.FilenameUtils;
-
 import exception.MyException;
+import util.Util;
 
 public class LoadConfigProperties {
 
@@ -22,7 +21,7 @@ public class LoadConfigProperties {
 	/* Property File Path */
 	/* Property File Name */
 	public LoadConfigProperties(String propertyFilePath, String propertyFileName) throws MyException {
-		verify(propertyFilePath, propertyFileName, "properties");
+		Util.verify(propertyFilePath, propertyFileName, "properties");
 		this.lFilePath = propertyFilePath;
 		this.lFileName = propertyFileName;
 		loadProperties();
@@ -73,24 +72,6 @@ public class LoadConfigProperties {
 
 	private void initializeProperties() {
 		this.properties = new Properties();
-	}
-
-	private static boolean verify(String filePath, String fileName, String fileExtension) throws MyException {
-		boolean flag = false;
-		if (!filePath.isEmpty()) {
-			if (!fileName.isEmpty()) {
-				if (FilenameUtils.getExtension(fileName).equals(fileExtension)) {
-					flag = true;
-				} else {
-					throw new MyException(fileName + " " + "File extension is incorrect");
-				}
-			} else {
-				throw new MyException("File name is empty");
-			}
-		} else {
-			throw new MyException("File path is empty");
-		}
-		return flag;
 	}
 
 }
