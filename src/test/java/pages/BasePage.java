@@ -1,18 +1,24 @@
 package pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import exception.MyException;
+import util.Util;
 
 import static constants.Constants.*;
 
@@ -360,6 +366,34 @@ public class BasePage {
 		} catch (Exception e) {
 			throw new MyException("Unable to Press:" + key);
 		}
+	}
+
+	/* <---------- Create snap shot directory with time stamp ---------> */
+	/* Parameter : Snap shot path */
+	protected String createSnapShotDirectory(String snapShotPath) throws MyException {
+		String screenshotDir = "";
+		try {
+			screenshotDir = snapShotPath + "//" + "snapShots" + "_" + Util.getCurrentDateTime();
+			new File(screenshotDir).mkdirs();
+		} catch (Exception e) {
+			throw new MyException("Unable to create snap shot directory:" + screenshotDir);
+		}
+		return screenshotDir;
+	}
+
+	/* <---------- Take a snap shot of the entire Browser page ---------> */
+	/* Parameter : Snap shot directory and Snap shot file name */
+	protected String takeASnapAndSaveAs(String snapShotDirectory, String snapShotName) throws IOException, MyException {
+		String path = "";
+		try {
+			path = createSnapShotDirectory(snapShotDirectory) + "//" + snapShotName;
+			File sImage = ((TakesScreenshot) lDriver).getScreenshotAs(OutputType.FILE);
+			File dImage = new File(path);
+			FileHandler.copy(sImage, dImage);
+		} catch (Exception e) {
+			throw new MyException("Unable to take a snap shot and save it as" + snapShotName);
+		}
+		return path;
 	}
 
 }
