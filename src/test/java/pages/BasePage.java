@@ -46,29 +46,29 @@ public class BasePage {
 		}
 	}
 
-	public void waitImplicitlyFor(int timeInSecs, String timeUnit) throws MyException {
+	public void open(String appURL) throws MyException {
 		try {
-			if (timeUnit.equals(SECOND)) {
-				lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.SECONDS);
-			} else if (timeUnit.equals(MILLISECOND)) {
-				lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.MILLISECONDS);
-			} else if (timeUnit.equals(MINUTE)) {
-				lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.MINUTES);
+			if (!appURL.isEmpty()) {
+				lDriver.get(appURL);
+			} else {
+				throw new MyException("App URL is empty");
 			}
+		} catch (Exception e) {
+			throw new MyException("Unable to navigate to:" + appURL);
+		}
+	}
+
+	public void waitImplicitlyFor(int timeInSecs) throws MyException {
+		try {
+			lDriver.manage().timeouts().implicitlyWait(timeInSecs, TimeUnit.SECONDS);
 		} catch (Exception e) {
 			throw new MyException("Unable to wait implicitly for:" + timeInSecs + "secs");
 		}
 	}
 
-	public void waitTillPageLoadsFor(int timeInSecs, String timeUnit) throws MyException {
+	public void waitTillPageLoadsFor(int timeInSecs) throws MyException {
 		try {
-			if (timeUnit.equals(SECOND)) {
-				lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.SECONDS);
-			} else if (timeUnit.equals(MILLISECOND)) {
-				lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.MILLISECONDS);
-			} else if (timeUnit.equals(MINUTE)) {
-				lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.MINUTES);
-			}
+			lDriver.manage().timeouts().pageLoadTimeout(timeInSecs, TimeUnit.SECONDS);
 		} catch (Exception e) {
 			throw new MyException("Unable to wait till page loads for:" + timeInSecs + "secs");
 		}
@@ -175,7 +175,7 @@ public class BasePage {
 	 */
 	/* Parameter : Locator and Verification Type */
 	/* @return True (or) False */
-	public boolean check(By locator, String verificationType) throws MyException {
+	public boolean verify(By locator, String verificationType) throws MyException {
 		try {
 			if (lDriver.findElements(locator).size() > 0) {
 				lWait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -201,26 +201,45 @@ public class BasePage {
 		}
 	}
 
-	/*
-	 * <---------- Select Element ByVisibleText (or) ByValue (or) ByIndex --------->
-	 */
-	/* Parameter : Locator, Choice type and Value */
-	public void choose(String choiceType, String value, By locator) throws MyException {
-		Select dropDown;
+	/* <---------- Select visible text in DropDown ---------> */
+	/* Parameter : Locator */
+	/* @return True (or) False */
+	public void selectText(String text, By locator) throws MyException {
 		try {
-			dropDown = new Select(identify(locator));
-			switch (choiceType) {
-			case TEXT:
-				dropDown.selectByVisibleText(value);
-			case VALUE:
-				dropDown.selectByValue(value);
-			case INDEX:
-				dropDown.selectByIndex(Integer.parseInt(value));
-			default:
-				throw new MyException("Invalid Verification Type");
+			if (isElementPresent(locator) == true) {
+				Select dropDown = new Select(identify(locator));
+				dropDown.selectByVisibleText(text);
 			}
 		} catch (Exception e) {
-			throw new MyException("Failed To Choose " + choiceType + ":" + value + " From:" + locator);
+			throw new MyException("Unable to select the text:" + text + " " + "from dropdown:" + locator);
+		}
+	}
+
+	/* <---------- Select value in DropDown ---------> */
+	/* Parameter : Locator */
+	/* @return True (or) False */
+	public void selectValue(String value, By locator) throws MyException {
+		try {
+			if (isElementPresent(locator) == true) {
+				Select dropDown = new Select(identify(locator));
+				dropDown.selectByValue(value);
+			}
+		} catch (Exception e) {
+			throw new MyException("Unable to select the value:" + value + " " + "from dropdown:" + locator);
+		}
+	}
+
+	/* <---------- Select index in DropDown ---------> */
+	/* Parameter : Locator */
+	/* @return True (or) False */
+	public void selectIndex(int index, By locator) throws MyException {
+		try {
+			if (isElementPresent(locator) == true) {
+				Select dropDown = new Select(identify(locator));
+				dropDown.selectByIndex(index);
+			}
+		} catch (Exception e) {
+			throw new MyException("Unable to select the index:" + index + " " + "from dropdown:" + locator);
 		}
 	}
 
@@ -301,7 +320,7 @@ public class BasePage {
 	/* Parameter : Locator */
 	public void Check(By locator, String info) throws MyException {
 		try {
-			if (!check(locator, "isSelected")) {
+			if (!verify(locator, "isSelected")) {
 				clickOn(locator);
 			}
 		} catch (Exception e) {
@@ -313,7 +332,7 @@ public class BasePage {
 	/* Parameter : Locator */
 	public void UnCheck(By locator, String info) throws MyException {
 		try {
-			if (check(locator, "isSelected")) {
+			if (verify(locator, "isSelected")) {
 				clickOn(locator);
 			}
 		} catch (Exception e) {

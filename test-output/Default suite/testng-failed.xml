@@ -3,17 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="base.BaseTest">
+      <class name="testcases.SanityTest">
         <methods>
-          <include name="beforeEachTestClass"/>
-          <include name="beforeEachTestCase"/>
-          <include name="suiteSetUp"/>
-          <include name="suiteTearDown"/>
-          <include name="afterEachTestClass"/>
-          <include name="sanityTest"/>
           <include name="afterEachTestCase"/>
+          <include name="beforeEachTestClass"/>
+          <include name="confirmUserRegistration"/>
+          <include name="userRegistration"/>
+          <include name="suiteSetUp"/>
         </methods>
-      </class> <!-- base.BaseTest -->
+      </class> <!-- testcases.SanityTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

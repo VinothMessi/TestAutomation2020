@@ -1,7 +1,9 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import exception.MyException;
 import pageObjects.RegistrationConfirmationObjects;
 
 public class RegistrationConfirmationPage extends BasePage implements RegistrationConfirmationObjects {
@@ -10,12 +12,13 @@ public class RegistrationConfirmationPage extends BasePage implements Registrati
 		super(driver);
 	}
 
-	public void verifySigInLink() {
-
+	public void verifySigInLink() throws MyException {
+		Assert.assertTrue(verify(signInLink, "isDisplayed"));
 	}
 
-	public void gotToFlightsPage() {
-
+	public FlightDetailsPage gotToFlightsPage() throws MyException {
+		clickOn(flightsLink);
+		return new FlightDetailsPage(lDriver);
 	}
 
 }

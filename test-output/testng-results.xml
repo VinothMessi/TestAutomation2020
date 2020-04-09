@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8071" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:58:07 IST">
+  <suite name="Default suite" duration-ms="10283" started-at="2020-04-10T01:10:29 IST" finished-at="2020-04-10T01:10:39 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8071" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:58:07 IST">
+    <test name="Default test" duration-ms="10283" started-at="2020-04-10T01:10:29 IST" finished-at="2020-04-10T01:10:39 IST">
       <class name="testcases.SanityTest">
-        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:testcases.SanityTest@614ddd49]" name="suiteSetUp" is-config="true" duration-ms="17" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:57:59 IST">
+        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:testcases.SanityTest@76707e36]" name="suiteSetUp" is-config="true" duration-ms="22" started-at="2020-04-10T01:10:29 IST" finished-at="2020-04-10T01:10:29 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteSetUp -->
-        <test-method status="PASS" signature="beforeEachTestClass()[pri:0, instance:testcases.SanityTest@614ddd49]" name="beforeEachTestClass" is-config="true" duration-ms="1" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:57:59 IST">
+        <test-method status="PASS" signature="beforeEachTestClass()[pri:0, instance:testcases.SanityTest@76707e36]" name="beforeEachTestClass" is-config="true" duration-ms="1925" started-at="2020-04-10T01:10:29 IST" finished-at="2020-04-10T01:10:31 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestClass -->
-        <test-method status="PASS" signature="beforeEachTestCase()[pri:0, instance:testcases.SanityTest@614ddd49]" name="beforeEachTestCase" is-config="true" duration-ms="1911" started-at="2020-04-09T20:57:59 IST" finished-at="2020-04-09T20:58:01 IST">
+        <test-method status="PASS" signature="openRegistration()[pri:1, instance:testcases.SanityTest@76707e36]" name="openRegistration" duration-ms="3100" started-at="2020-04-10T01:10:31 IST" finished-at="2020-04-10T01:10:34 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeEachTestCase -->
-        <test-method status="PASS" signature="sanityTest()[pri:0, instance:testcases.SanityTest@614ddd49]" name="sanityTest" duration-ms="1807" started-at="2020-04-09T20:58:01 IST" finished-at="2020-04-09T20:58:03 IST">
+        </test-method> <!-- openRegistration -->
+        <test-method status="PASS" signature="userRegistration()[pri:2, instance:testcases.SanityTest@76707e36]" name="userRegistration" duration-ms="3529" started-at="2020-04-10T01:10:34 IST" finished-at="2020-04-10T01:10:37 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sanityTest -->
-        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest@614ddd49]" name="afterEachTestCase" is-config="true" duration-ms="4330" started-at="2020-04-09T20:58:03 IST" finished-at="2020-04-09T20:58:07 IST">
+        </test-method> <!-- userRegistration -->
+        <test-method status="PASS" signature="confirmUserRegistration()[pri:3, instance:testcases.SanityTest@76707e36]" name="confirmUserRegistration" duration-ms="983" started-at="2020-04-10T01:10:37 IST" finished-at="2020-04-10T01:10:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmUserRegistration -->
+        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest@76707e36]" name="afterEachTestCase" is-config="true" duration-ms="713" started-at="2020-04-10T01:10:38 IST" finished-at="2020-04-10T01:10:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestCase -->

@@ -28,13 +28,7 @@ public class Constants {
 	public static final String ENABLED = "isEnabled";
 	public static final String SELECTED = "isSelected";
 	
-	public static final String TEXT = "text";
-	public static final String VALUE = "value";
-	public static final String INDEX = "index";
-	
 	/* <---------- Custom Utilities ---------> */
-	public static final String MINUTE = "minutes";
-	public static final String SECOND = "seconds";
-	public static final String MILLISECOND = "milliseconds";
+	public static final int WAIT_TIME = 20;
 
 }
