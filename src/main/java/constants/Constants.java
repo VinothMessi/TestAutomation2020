@@ -22,5 +22,14 @@ public class Constants {
 	public static final String REMOTE = "Remote";
 	public static final String CHROME = "Chrome";
 	public static final String FIREFOX = "Firefox";
+	
+	/* <---------- Custom Utilities ---------> */
+	public static final String DISPLAYED = "isDisplayed";
+	public static final String ENABLED = "isEnabled";
+	public static final String SELECTED = "isSelected";
+	
+	public static final String TEXT = "Text";
+	public static final String VALUE = "Value";
+	public static final String INDEX = "Index";
 
 }
