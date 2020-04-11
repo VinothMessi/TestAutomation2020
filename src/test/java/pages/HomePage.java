@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import base.BasePage;
 import exception.MyException;
 import pageObjects.HomePageObjects;
 

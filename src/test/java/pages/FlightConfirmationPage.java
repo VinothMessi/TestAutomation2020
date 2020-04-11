@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import base.BasePage;
 import pageObjects.FlightConfirmationPageObjects;
 
 public class FlightConfirmationPage extends BasePage implements FlightConfirmationPageObjects {

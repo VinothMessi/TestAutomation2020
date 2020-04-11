@@ -39,7 +39,7 @@ public class LocalDriver implements IDriver {
 	/* <---------- Setting Driver Properties and File Path ---------> */
 	/* Parameters : Chrome (Or) Firefox */
 	private void setDriverProperty(String browserName) throws MyException {
-		String os = System.getProperty("os.name").toLowerCase().substring(0, 3);
+		String os = OS.toLowerCase().substring(0, 3);
 		switch (browserName) {
 		case CHROME:
 			System.setProperty(CHROME_DRIVER_PROPERTY,

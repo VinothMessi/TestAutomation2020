@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import base.BasePage;
 import exception.MyException;
 import pageObjects.RegistrationPageObjects;
 

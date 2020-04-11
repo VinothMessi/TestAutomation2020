@@ -2,6 +2,8 @@ package base;
 
 import java.net.MalformedURLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -40,10 +42,17 @@ public class TestBase {
 	protected static String testReportName;
 
 	protected WebDriver browser;
+	
+	/* <---------- Log4j Instance ---------> */
+	public static Logger log;
 
 	@BeforeSuite
 	public void suiteSetUp() throws MyException {
+		
 		config = HoldConfigProperties.getInstance();
+		
+		/* <---------- Initializing Log4j ---------> */
+		log = LogManager.getLogger("AutomationTesting2020");
 
 		browserType = config.properties.get("browserType");
 		driverFilePath = config.properties.get("driverFilesPath");

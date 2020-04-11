@@ -1,4 +1,4 @@
-package pages;
+package base;
 
 import java.io.File;
 import java.io.IOException;
@@ -427,17 +427,17 @@ public class BasePage {
 	/* <---------- Take a snap shot of the entire Browser page ---------> */
 	/* Parameter : Snap shot directory and Snap shot file name */
 	public String takeASnapAndSaveAs(String snapShotDirectory, String snapShotName) throws IOException, MyException {
-		String path = "";
+		StringBuilder path = null;
 		try {
-			Util.verify(snapShotDirectory, snapShotName, "png");
-			path = snapShotDirectory + "//" + snapShotName;
+			Util.verify(snapShotDirectory, snapShotName, IMAGE_EXT);
+			path = new StringBuilder().append(snapShotDirectory).append("//").append(snapShotName);
 			File sImage = ((TakesScreenshot) lDriver).getScreenshotAs(OutputType.FILE);
-			File dImage = new File(path);
+			File dImage = new File(path.toString());
 			FileHandler.copy(sImage, dImage);
 		} catch (Exception e) {
 			throw new MyException("Unable to take a snap shot and save it as:" + snapShotName + "\n" + e.getMessage());
 		}
-		return path;
+		return path.toString();
 	}
 
 }
