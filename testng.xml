@@ -3,6 +3,12 @@
 
 <suite name="Test_Automation_2020">
 
+	<listeners>
+
+		<listener class-name="listeners.TestListeners" />
+
+	</listeners>
+
 	<test name="Sample Application Tests">
 
 		<classes>
