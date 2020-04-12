@@ -1,13 +1,44 @@
 package testcases;
 
-import java.io.IOException;
+import static constants.Constants.WAIT_TIME;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.TestBase;
+import browser.BrowserFactory;
 import exception.MyException;
+import pages.HomePage;
 
-public class SanityTest extends TestBase {
+public class SanityTest1 extends TestBase {
+
+	private String noOfPassengers;
+	private String expectedPrice;
+
+	@BeforeTest
+	@Parameters({ "noOfPassengers", "expectedPrice" })
+	public void beforeEachTestClass(String noOfPassengers, String expectedPrice)
+			throws MalformedURLException, MyException {
+		this.noOfPassengers = noOfPassengers;
+		this.expectedPrice = expectedPrice;
+
+		bFactory = BrowserFactory.getInstance();
+		// browser = bFactory.getDriver(browserType,
+		// driverFilePath).launch(browserName);
+		driver = bFactory.getDriver(browserType, driverFilePath).launch(browserName);
+		browser.set(driver);
+
+		// page = new HomePage(browser);
+		page = new HomePage(browser.get());
+		page.maximize();
+		page.waitImplicitlyFor(WAIT_TIME);
+		page.waitTillPageLoadsFor(WAIT_TIME);
+	}
 
 	@Test(priority = 1)
 	public void open_Registration() throws MyException {
@@ -33,7 +64,7 @@ public class SanityTest extends TestBase {
 
 	@Test(priority = 4)
 	public void flight_Reservation() throws IOException, MyException {
-		flightDetailsPage.selectNoOfPassengers("2");
+		flightDetailsPage.selectNoOfPassengers(this.noOfPassengers);
 		selectFlights = flightDetailsPage.goToSelectFlightsPage();
 		selectFlights.reserveFlights();
 		flightConfirmationPage = selectFlights.gotToFlightsConfirmationPage();
@@ -41,9 +72,15 @@ public class SanityTest extends TestBase {
 
 	@Test(priority = 5)
 	public void flight_Confirmation() throws IOException, MyException {
-		flightConfirmationPage.printFlightConfirmation("$1169 USD");
+		flightConfirmationPage.printFlightConfirmation(this.expectedPrice);
 		signOnPage = flightConfirmationPage.signOff();
 		page = signOnPage.testingDone();
+	}
+
+	@AfterTest
+	public void afterEachTestCase() {
+		// browser.quit();
+		browser.get().quit();
 	}
 
 }
