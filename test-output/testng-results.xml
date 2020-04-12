@@ -1,45 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="20" passed="20">
   <reporter-output>
   </reporter-output>
-  <suite name="Test_Automation_2020" duration-ms="22634" started-at="2020-04-12T14:47:14 IST" finished-at="2020-04-12T14:47:37 IST">
+  <suite name="Test_Automation_2020" duration-ms="17217" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:45Z">
     <groups>
     </groups>
-    <test name="Sample Application Tests" duration-ms="22634" started-at="2020-04-12T14:47:14 IST" finished-at="2020-04-12T14:47:37 IST">
-      <class name="testcases.SanityTest">
-        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:testcases.SanityTest@1d29cf23]" name="suiteSetUp" is-config="true" duration-ms="340" started-at="2020-04-12T14:47:14 IST" finished-at="2020-04-12T14:47:14 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- suiteSetUp -->
-        <test-method status="PASS" signature="beforeEachTestClass()[pri:0, instance:testcases.SanityTest@1d29cf23]" name="beforeEachTestClass" is-config="true" duration-ms="2024" started-at="2020-04-12T14:47:14 IST" finished-at="2020-04-12T14:47:16 IST">
+    <test name="Book Flight for 2 Passengers" duration-ms="17153" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:44Z">
+      <class name="testcases.SanityTest1">
+        <test-method status="PASS" signature="beforeEachTestClass(java.lang.String, java.lang.String)[pri:0, instance:testcases.SanityTest1@3f49dace]" name="beforeEachTestClass" is-config="true" duration-ms="2880" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$1169 USD]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestClass -->
-        <test-method status="PASS" signature="open_Registration()[pri:1, instance:testcases.SanityTest@1d29cf23]" name="open_Registration" duration-ms="3904" started-at="2020-04-12T14:47:16 IST" finished-at="2020-04-12T14:47:20 IST">
+        <test-method status="PASS" signature="open_Registration()[pri:1, instance:testcases.SanityTest1@3f49dace]" name="open_Registration" duration-ms="2976" started-at="2020-04-12T19:48:30Z" finished-at="2020-04-12T19:48:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- open_Registration -->
-        <test-method status="PASS" signature="user_Registration()[pri:2, instance:testcases.SanityTest@1d29cf23]" name="user_Registration" duration-ms="6487" started-at="2020-04-12T14:47:20 IST" finished-at="2020-04-12T14:47:27 IST">
+        <test-method status="PASS" signature="user_Registration()[pri:2, instance:testcases.SanityTest1@3f49dace]" name="user_Registration" duration-ms="4414" started-at="2020-04-12T19:48:33Z" finished-at="2020-04-12T19:48:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- user_Registration -->
-        <test-method status="PASS" signature="confirm_User_Registration()[pri:3, instance:testcases.SanityTest@1d29cf23]" name="confirm_User_Registration" duration-ms="1010" started-at="2020-04-12T14:47:27 IST" finished-at="2020-04-12T14:47:28 IST">
+        <test-method status="PASS" signature="confirm_User_Registration()[pri:3, instance:testcases.SanityTest1@3f49dace]" name="confirm_User_Registration" duration-ms="1236" started-at="2020-04-12T19:48:38Z" finished-at="2020-04-12T19:48:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- confirm_User_Registration -->
-        <test-method status="PASS" signature="flight_Reservation()[pri:4, instance:testcases.SanityTest@1d29cf23]" name="flight_Reservation" duration-ms="3682" started-at="2020-04-12T14:47:28 IST" finished-at="2020-04-12T14:47:32 IST">
+        <test-method status="PASS" signature="flight_Reservation()[pri:4, instance:testcases.SanityTest1@3f49dace]" name="flight_Reservation" duration-ms="3324" started-at="2020-04-12T19:48:39Z" finished-at="2020-04-12T19:48:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flight_Reservation -->
-        <test-method status="PASS" signature="flight_Confirmation()[pri:5, instance:testcases.SanityTest@1d29cf23]" name="flight_Confirmation" duration-ms="4548" started-at="2020-04-12T14:47:32 IST" finished-at="2020-04-12T14:47:36 IST">
+        <test-method status="PASS" signature="flight_Confirmation()[pri:5, instance:testcases.SanityTest1@3f49dace]" name="flight_Confirmation" duration-ms="1273" started-at="2020-04-12T19:48:42Z" finished-at="2020-04-12T19:48:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flight_Confirmation -->
-        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest@1d29cf23]" name="afterEachTestCase" is-config="true" duration-ms="777" started-at="2020-04-12T14:47:36 IST" finished-at="2020-04-12T14:47:37 IST">
+        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest1@3f49dace]" name="afterEachTestCase" is-config="true" duration-ms="976" started-at="2020-04-12T19:48:43Z" finished-at="2020-04-12T19:48:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestCase -->
-      </class> <!-- testcases.SanityTest -->
-    </test> <!-- Sample Application Tests -->
+      </class> <!-- testcases.SanityTest1 -->
+    </test> <!-- Book Flight for 2 Passengers -->
+    <test name="Book Flight for 4 Passengers" duration-ms="17217" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:45Z">
+      <class name="testcases.SanityTest1">
+        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:testcases.SanityTest1@1ed4004b]" name="suiteSetUp" is-config="true" duration-ms="426" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetUp -->
+        <test-method status="PASS" signature="beforeEachTestClass(java.lang.String, java.lang.String)[pri:0, instance:testcases.SanityTest1@1ed4004b]" name="beforeEachTestClass" is-config="true" duration-ms="2941" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$2338 USD]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachTestClass -->
+        <test-method status="PASS" signature="open_Registration()[pri:1, instance:testcases.SanityTest1@1ed4004b]" name="open_Registration" duration-ms="3593" started-at="2020-04-12T19:48:30Z" finished-at="2020-04-12T19:48:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open_Registration -->
+        <test-method status="PASS" signature="user_Registration()[pri:2, instance:testcases.SanityTest1@1ed4004b]" name="user_Registration" duration-ms="4285" started-at="2020-04-12T19:48:34Z" finished-at="2020-04-12T19:48:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_Registration -->
+        <test-method status="PASS" signature="confirm_User_Registration()[pri:3, instance:testcases.SanityTest1@1ed4004b]" name="confirm_User_Registration" duration-ms="921" started-at="2020-04-12T19:48:38Z" finished-at="2020-04-12T19:48:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirm_User_Registration -->
+        <test-method status="PASS" signature="flight_Reservation()[pri:4, instance:testcases.SanityTest1@1ed4004b]" name="flight_Reservation" duration-ms="3278" started-at="2020-04-12T19:48:39Z" finished-at="2020-04-12T19:48:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_Reservation -->
+        <test-method status="PASS" signature="flight_Confirmation()[pri:5, instance:testcases.SanityTest1@1ed4004b]" name="flight_Confirmation" duration-ms="1288" started-at="2020-04-12T19:48:42Z" finished-at="2020-04-12T19:48:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_Confirmation -->
+        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest1@1ed4004b]" name="afterEachTestCase" is-config="true" duration-ms="880" started-at="2020-04-12T19:48:44Z" finished-at="2020-04-12T19:48:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTestCase -->
+      </class> <!-- testcases.SanityTest1 -->
+    </test> <!-- Book Flight for 4 Passengers -->
+    <test name="Book Flight for 1 Passenger" duration-ms="17213" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:45Z">
+      <class name="testcases.SanityTest1">
+        <test-method status="PASS" signature="beforeEachTestClass(java.lang.String, java.lang.String)[pri:0, instance:testcases.SanityTest1@5442a311]" name="beforeEachTestClass" is-config="true" duration-ms="2913" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$584 USD]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachTestClass -->
+        <test-method status="PASS" signature="open_Registration()[pri:1, instance:testcases.SanityTest1@5442a311]" name="open_Registration" duration-ms="3897" started-at="2020-04-12T19:48:30Z" finished-at="2020-04-12T19:48:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open_Registration -->
+        <test-method status="PASS" signature="user_Registration()[pri:2, instance:testcases.SanityTest1@5442a311]" name="user_Registration" duration-ms="4210" started-at="2020-04-12T19:48:34Z" finished-at="2020-04-12T19:48:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_Registration -->
+        <test-method status="PASS" signature="confirm_User_Registration()[pri:3, instance:testcases.SanityTest1@5442a311]" name="confirm_User_Registration" duration-ms="1178" started-at="2020-04-12T19:48:38Z" finished-at="2020-04-12T19:48:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirm_User_Registration -->
+        <test-method status="PASS" signature="flight_Reservation()[pri:4, instance:testcases.SanityTest1@5442a311]" name="flight_Reservation" duration-ms="3032" started-at="2020-04-12T19:48:40Z" finished-at="2020-04-12T19:48:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_Reservation -->
+        <test-method status="PASS" signature="flight_Confirmation()[pri:5, instance:testcases.SanityTest1@5442a311]" name="flight_Confirmation" duration-ms="1174" started-at="2020-04-12T19:48:43Z" finished-at="2020-04-12T19:48:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_Confirmation -->
+        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest1@5442a311]" name="afterEachTestCase" is-config="true" duration-ms="768" started-at="2020-04-12T19:48:44Z" finished-at="2020-04-12T19:48:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTestCase -->
+      </class> <!-- testcases.SanityTest1 -->
+    </test> <!-- Book Flight for 1 Passenger -->
+    <test name="Book Flight for 3 Passengers" duration-ms="17175" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:44Z">
+      <class name="testcases.SanityTest1">
+        <test-method status="PASS" signature="beforeEachTestClass(java.lang.String, java.lang.String)[pri:0, instance:testcases.SanityTest1@59494225]" name="beforeEachTestClass" is-config="true" duration-ms="2950" started-at="2020-04-12T19:48:27Z" finished-at="2020-04-12T19:48:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$1753 USD]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachTestClass -->
+        <test-method status="PASS" signature="open_Registration()[pri:1, instance:testcases.SanityTest1@59494225]" name="open_Registration" duration-ms="3035" started-at="2020-04-12T19:48:30Z" finished-at="2020-04-12T19:48:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open_Registration -->
+        <test-method status="PASS" signature="user_Registration()[pri:2, instance:testcases.SanityTest1@59494225]" name="user_Registration" duration-ms="4425" started-at="2020-04-12T19:48:33Z" finished-at="2020-04-12T19:48:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_Registration -->
+        <test-method status="PASS" signature="confirm_User_Registration()[pri:3, instance:testcases.SanityTest1@59494225]" name="confirm_User_Registration" duration-ms="1205" started-at="2020-04-12T19:48:38Z" finished-at="2020-04-12T19:48:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirm_User_Registration -->
+        <test-method status="PASS" signature="flight_Reservation()[pri:4, instance:testcases.SanityTest1@59494225]" name="flight_Reservation" duration-ms="3324" started-at="2020-04-12T19:48:39Z" finished-at="2020-04-12T19:48:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_Reservation -->
+        <test-method status="PASS" signature="flight_Confirmation()[pri:5, instance:testcases.SanityTest1@59494225]" name="flight_Confirmation" duration-ms="1307" started-at="2020-04-12T19:48:42Z" finished-at="2020-04-12T19:48:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_Confirmation -->
+        <test-method status="PASS" signature="afterEachTestCase()[pri:0, instance:testcases.SanityTest1@59494225]" name="afterEachTestCase" is-config="true" duration-ms="903" started-at="2020-04-12T19:48:44Z" finished-at="2020-04-12T19:48:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTestCase -->
+      </class> <!-- testcases.SanityTest1 -->
+    </test> <!-- Book Flight for 3 Passengers -->
   </suite> <!-- Test_Automation_2020 -->
 </testng-results>

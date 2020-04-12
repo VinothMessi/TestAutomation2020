@@ -1,13 +1,11 @@
 package base;
 
-import java.net.MalformedURLException;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.ExtentReports;
 
 import browser.BrowserFactory;
 import exception.MyException;
@@ -19,38 +17,41 @@ import pages.RegistrationPage;
 import pages.SelectFlightsPage;
 import pages.SignOnPage;
 import properties.HoldConfigProperties;
+import report.ReportManager;
 import util.Util;
-
-import static constants.Constants.*;
 
 public class TestBase {
 
-	public HoldConfigProperties config;
+	public static HoldConfigProperties config;
 	public BrowserFactory bFactory;
 
-	public static HomePage page;
-	public RegistrationPage registerPage;
-	public RegistrationConfirmationPage registerConfirmationPage;
-	public FlightDetailsPage flightDetailsPage;
-	public SelectFlightsPage selectFlights;
-	public FlightConfirmationPage flightConfirmationPage;
-	public SignOnPage signOnPage;
+	protected HomePage page;
+	protected RegistrationPage registerPage;
+	protected RegistrationConfirmationPage registerConfirmationPage;
+	protected FlightDetailsPage flightDetailsPage;
+	protected SelectFlightsPage selectFlights;
+	protected FlightConfirmationPage flightConfirmationPage;
+	protected SignOnPage signOnPage;
 
-	String browserType;
-	String driverFilePath;
-	String browserName;
-	String snapShotRootPath;
-	String testReportRootPath;
+	public static String browserType;
+	public static String driverFilePath;
+	public static String browserName;
+	public static String snapShotRootPath;
+	public static String testReportRootPath;
 
-	protected String appURL;
-	protected static String snapShotFolder;
-	protected static String testReportFolder;
-	protected static String testReportName;
+	public static String appURL;
+	public static String snapShotFolder;
+	public static String testReportFolder;
+	public static String testReportName;
 
-	protected WebDriver browser;
+	// public static WebDriver browser;
+	protected WebDriver driver;
+	public ThreadLocal<WebDriver> browser = new ThreadLocal<WebDriver>();
 
 	/* <---------- Log4j Instance ---------> */
 	public static Logger log;
+
+	public static ExtentReports report;
 
 	@BeforeSuite
 	public void suiteSetUp() throws MyException {
@@ -69,24 +70,9 @@ public class TestBase {
 		testReportName = config.properties.get("testReportName");
 
 		snapShotFolder = Util.createDirectory(snapShotRootPath, "snapShots");
-		System.out.println(snapShotFolder);
 		testReportFolder = Util.createDirectory(testReportRootPath, "report");
-	}
 
-	@BeforeClass
-	public void beforeEachTestClass() throws MalformedURLException, MyException {
-		bFactory = BrowserFactory.getInstance();
-		browser = bFactory.getDriver(browserType, driverFilePath).launch(browserName);
-
-		page = new HomePage(browser);
-		page.maximize();
-		page.waitImplicitlyFor(WAIT_TIME);
-		page.waitTillPageLoadsFor(WAIT_TIME);
-	}
-
-	@AfterClass
-	public void afterEachTestCase() {
-		browser.quit();
+		report = ReportManager.getInstance(testReportFolder, testReportName);
 	}
 
 }

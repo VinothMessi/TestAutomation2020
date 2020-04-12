@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Test_Automation_2020]">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test_Automation_2020]" parallel="tests">
   <listeners>
     <listener class-name="listeners.TestListeners"/>
   </listeners>
-  <test thread-count="5" name="Sample Application Tests(failed)">
+  <test thread-count="2" name="Book Flight for 2 Passengers(failed)" parallel="tests">
+    <parameter name="expectedPrice" value="$1169 USD"/>
+    <parameter name="noOfPassengers" value="2"/>
     <classes>
-      <class name="testcases.SanityTest">
+      <class name="testcases.SanityTest1">
         <methods>
-          <include name="afterEachTestCase"/>
           <include name="beforeEachTestClass"/>
+          <include name="open_Registration"/>
           <include name="suiteSetUp"/>
-          <include name="flight_Confirmation"/>
+          <include name="afterEachTestCase"/>
         </methods>
-      </class> <!-- testcases.SanityTest -->
+      </class> <!-- testcases.SanityTest1 -->
     </classes>
-  </test> <!-- Sample Application Tests(failed) -->
+  </test> <!-- Book Flight for 2 Passengers(failed) -->
 </suite> <!-- Failed suite [Test_Automation_2020] -->
