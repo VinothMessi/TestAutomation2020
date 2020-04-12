@@ -11,4 +11,8 @@ public class SignOnPage extends BasePage implements SignOnPageObjects {
 		super(driver);
 	}
 
+	public HomePage testingDone() {
+		return new HomePage(lDriver);
+	}
+
 }

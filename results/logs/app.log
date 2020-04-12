@@ -1,8 +1,0 @@
-20:13:23.977 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Sample Application Tests
-20:13:24.063 INFO  AutomationTesting2020 -confirmUserRegistration
-20:13:24.063 INFO  AutomationTesting2020 -openRegistration
-20:13:24.063 INFO  AutomationTesting2020 -userRegistration
-20:13:29.308 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: openRegistration
-20:13:41.888 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: userRegistration
-20:13:42.860 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: confirmUserRegistration
-20:13:43.604 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Sample Application Tests

@@ -147,7 +147,7 @@ public class Util {
 	public static String createDirectory(String rootDirectory, String directoryToBeCreated) throws MyException {
 		String dir = "";
 		try {
-			dir = rootDirectory + "//" + directoryToBeCreated + "_" + Util.getCurrentDateTime();
+			dir = rootDirectory + directoryToBeCreated + "_" + Util.getCurrentDateTime();
 			new File(dir).mkdirs();
 		} catch (Exception e) {
 			throw new MyException("Unable to create new directory:" + dir);

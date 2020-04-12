@@ -1,6 +1,5 @@
 package listeners;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 import org.testng.ITestContext;
@@ -17,7 +16,6 @@ import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import base.TestBase;
-import exception.MyException;
 import report.ReportManager;
 
 public class TestListeners extends TestBase implements ITestListener {
@@ -77,8 +75,17 @@ public class TestListeners extends TestBase implements ITestListener {
 					.fail("<details>" + "<summary>" + "<b>" + "<font color=red>"
 							+ "Exception Occurred: Click to see details: " + "</font>" + "</b>" + "</summary>"
 							+ exceptionMessage.replaceAll(",", "<br>") + "</details>" + " \n");
+			
+			System.out.println("Snap Shot Folder Path:" + snapShotFolder);
+			String path = page.takeASnapAndSaveAs(snapShotFolder, methodName + ".png");
+			testCase.get().fail("<b>" + "<font color=red>" + "Screenshot of failure" + "</font>" + "</b>",
+					MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+			
+			String logText = "<b>" + "Test Method " + methodName + " Failed" + "</b>";
+			Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
+			testCase.get().log(Status.FAIL, m);
 
-			String path = "";
+			/*String path = "";
 			try {
 				path = page.takeASnapAndSaveAs(snapShotFolder, methodName + ".png");
 			} catch (IOException e1) {
@@ -87,19 +94,19 @@ public class TestListeners extends TestBase implements ITestListener {
 			} catch (MyException e1) {
 				testCase.get().fail("Test Method Failed, cannot take screenshot");
 				log.error("Test Method Failed, cannot take screenshot", e1);
-			}
+			}*/
 
-			try {
+			/*try {
 				testCase.get().fail("<b>" + "<font color=red>" + "Screenshot of failure" + "</font>" + "</b>",
 						MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 			} catch (IOException e) {
 				testCase.get().fail("Test Method Failed, cannot attach screenshot");
 				log.error("Test Method Failed, cannot attach screenshot", e);
-			}
+			}*/
 
-			String logText = "<b>" + "Test Method " + methodName + " Failed" + "</b>";
+			/*String logText = "<b>" + "Test Method " + methodName + " Failed" + "</b>";
 			Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
-			testCase.get().log(Status.FAIL, m);
+			testCase.get().log(Status.FAIL, m);*/
 		} catch (Exception e) {
 			log.error("Error while executing onTestFailure, full stack trace follows:", e);
 		}

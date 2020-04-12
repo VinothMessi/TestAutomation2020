@@ -316,6 +316,24 @@ public class BasePage {
 		return text;
 	}
 
+	public String getTextFrom(WebElement element) throws MyException {
+		String text = null;
+		try {
+			text = element.getText();
+			if (text.length() == 0) {
+				text = element.getAttribute("innerText");
+			}
+			if (!text.isEmpty()) {
+				text = text.trim();
+			} else {
+				throw new MyException("Text Not Found");
+			}
+		} catch (Exception e) {
+			throw new MyException("Failed To Get The Text From: " + element);
+		}
+		return text;
+	}
+
 	/* <---------- Check (check box) ---------> */
 	/* Parameter : Locator */
 	public void Check(By locator, String info) throws MyException {

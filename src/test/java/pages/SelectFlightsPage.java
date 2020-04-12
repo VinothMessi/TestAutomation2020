@@ -1,8 +1,10 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.BasePage;
+import exception.MyException;
 import pageObjects.SelectFlightsPageObjects;
 
 public class SelectFlightsPage extends BasePage implements SelectFlightsPageObjects {
@@ -11,12 +13,15 @@ public class SelectFlightsPage extends BasePage implements SelectFlightsPageObje
 		super(driver);
 	}
 
-	public void gotToBookFlightsPage() {
-
+	public void reserveFlights() throws MyException {
+		lWait.until(ExpectedConditions.elementToBeClickable(reserveFlights));
+		clickOn(reserveFlights);
 	}
 
-	public void gotToFlightsConfirmationPage() {
-
+	public FlightConfirmationPage gotToFlightsConfirmationPage() throws MyException {
+		lWait.until(ExpectedConditions.elementToBeClickable(buyFlights));
+		clickOn(buyFlights);
+		return new FlightConfirmationPage(lDriver);
 	}
 
 }

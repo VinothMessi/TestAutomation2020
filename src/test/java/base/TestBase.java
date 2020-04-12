@@ -11,10 +11,13 @@ import org.testng.annotations.BeforeSuite;
 
 import browser.BrowserFactory;
 import exception.MyException;
+import pages.FlightConfirmationPage;
 import pages.FlightDetailsPage;
 import pages.HomePage;
 import pages.RegistrationConfirmationPage;
 import pages.RegistrationPage;
+import pages.SelectFlightsPage;
+import pages.SignOnPage;
 import properties.HoldConfigProperties;
 import util.Util;
 
@@ -25,32 +28,35 @@ public class TestBase {
 	public HoldConfigProperties config;
 	public BrowserFactory bFactory;
 
-	public HomePage page;
+	public static HomePage page;
 	public RegistrationPage registerPage;
 	public RegistrationConfirmationPage registerConfirmationPage;
 	public FlightDetailsPage flightDetailsPage;
+	public SelectFlightsPage selectFlights;
+	public FlightConfirmationPage flightConfirmationPage;
+	public SignOnPage signOnPage;
 
 	String browserType;
 	String driverFilePath;
 	String browserName;
 	String snapShotRootPath;
 	String testReportRootPath;
-	
+
 	protected String appURL;
-	protected String snapShotFolder;
+	protected static String snapShotFolder;
 	protected static String testReportFolder;
 	protected static String testReportName;
 
 	protected WebDriver browser;
-	
+
 	/* <---------- Log4j Instance ---------> */
 	public static Logger log;
 
 	@BeforeSuite
 	public void suiteSetUp() throws MyException {
-		
+
 		config = HoldConfigProperties.getInstance();
-		
+
 		/* <---------- Initializing Log4j ---------> */
 		log = LogManager.getLogger("AutomationTesting2020");
 
@@ -63,6 +69,7 @@ public class TestBase {
 		testReportName = config.properties.get("testReportName");
 
 		snapShotFolder = Util.createDirectory(snapShotRootPath, "snapShots");
+		System.out.println(snapShotFolder);
 		testReportFolder = Util.createDirectory(testReportRootPath, "report");
 	}
 

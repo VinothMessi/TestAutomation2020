@@ -7,7 +7,7 @@ public interface FlightDetailsPageObjects {
 	By roundTrip = By.xpath("//input[@value='roundtrip']");
 	By oneWay = By.xpath("//input[@value='oneway']");
 
-	By noOfPassengers = By.name("passCount");
+	By noOfPassengersDropDown = By.name("passCount");
 
 	By departingFrom = By.name("passCount");
 	By departingFromMonth = By.name("fromMonth");
