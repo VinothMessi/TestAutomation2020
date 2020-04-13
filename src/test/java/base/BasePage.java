@@ -33,7 +33,7 @@ public class BasePage {
 	public BasePage(WebDriver driver) {
 		if (driver != null) {
 			this.lDriver = driver;
-			this.lWait = new WebDriverWait(driver, 30);
+			this.lWait = new WebDriverWait(driver, WAIT_TIME);
 			js = (JavascriptExecutor) driver;
 		}
 	}
@@ -447,8 +447,10 @@ public class BasePage {
 	public String takeASnapAndSaveAs(String snapShotDirectory, String snapShotName) throws IOException, MyException {
 		StringBuilder path = null;
 		try {
+			System.out.println("Inside Take snap shot method");
 			Util.verify(snapShotDirectory, snapShotName, IMAGE_EXT);
 			path = new StringBuilder().append(snapShotDirectory).append("//").append(snapShotName);
+			System.out.println("Snap shot path:" + path);
 			File sImage = ((TakesScreenshot) lDriver).getScreenshotAs(OutputType.FILE);
 			File dImage = new File(path.toString());
 			FileHandler.copy(sImage, dImage);

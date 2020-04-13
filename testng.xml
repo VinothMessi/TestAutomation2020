@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Test_Automation_2020" parallel="tests"
-	thread-count="4">
+<suite name="Test_Automation_2020" parallel="tests" thread-count="4">
 
 	<listeners>
 
@@ -17,7 +16,7 @@
 
 		<classes>
 
-			<class name="testcases.SanityTest1" />
+			<class name="testcases.SanityTest" />
 
 		</classes>
 
@@ -30,7 +29,7 @@
 
 		<classes>
 
-			<class name="testcases.SanityTest1" />
+			<class name="testcases.SanityTest" />
 
 		</classes>
 
@@ -43,7 +42,7 @@
 
 		<classes>
 
-			<class name="testcases.SanityTest1" />
+			<class name="testcases.SanityTest" />
 
 		</classes>
 
@@ -56,7 +55,7 @@
 
 		<classes>
 
-			<class name="testcases.SanityTest1" />
+			<class name="testcases.SanityTest" />
 
 		</classes>
 
