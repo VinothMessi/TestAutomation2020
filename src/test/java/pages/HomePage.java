@@ -30,5 +30,5 @@ public class HomePage extends BasePage implements HomePageObjects {
 		clickOn(registerLink);
 		return new RegistrationPage(lDriver);
 	}
-
+	
 }
