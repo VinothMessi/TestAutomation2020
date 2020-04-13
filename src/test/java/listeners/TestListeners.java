@@ -76,11 +76,14 @@ public class TestListeners extends TestBase implements ITestListener {
 					.fail("<details>" + "<summary>" + "<b>" + "<font color=red>"
 							+ "Exception Occurred: Click to see details: " + "</font>" + "</b>" + "</summary>"
 							+ exceptionMessage.replaceAll(",", "<br>") + "</details>" + " \n");
-
-			System.out.println("Snap Shot Folder Path:" + snapShotFolder);
-			String path = page.takeASnapAndSaveAs(snapShotFolder, methodName + ".png");
-			testCase.get().fail("<b>" + "<font color=red>" + "Screenshot of failure" + "</font>" + "</b>",
-					MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+			
+			try {
+				String path = page.takeASnapAndSaveAs(snapShotFolder, methodName + ".png");
+				testCase.get().fail("<b>" + "<font color=red>" + "Screenshot of failure" + "</font>" + "</b>",
+						MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+			} catch (Exception e) {
+				log.error("Unable to take snap shot:" + "\n" + e.toString());
+			}
 
 			String logText = "<b>" + "Test Method " + methodName + " Failed" + "</b>";
 			Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);

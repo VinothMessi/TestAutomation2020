@@ -1,9 +1,16 @@
 package base;
 
+import static constants.Constants.WAIT_TIME;
+
+import java.net.MalformedURLException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 
@@ -40,6 +47,7 @@ public class TestBase {
 	public static String testReportRootPath;
 
 	public static String appURL;
+	public static String hubURL;
 	public static String snapShotFolder;
 	public static String testReportFolder;
 	public static String testReportName;
@@ -65,6 +73,7 @@ public class TestBase {
 		driverFilePath = config.properties.get("driverFilesPath");
 		browserName = config.properties.get("browser");
 		appURL = config.properties.get("appURL");
+		hubURL = config.properties.get("hubURL");
 		snapShotRootPath = config.properties.get("snapShotRootPath");
 		testReportRootPath = config.properties.get("testReportRootPath");
 		testReportName = config.properties.get("testReportName");
@@ -73,6 +82,28 @@ public class TestBase {
 		testReportFolder = Util.createDirectory(testReportRootPath, "report");
 
 		report = ReportManager.getInstance(testReportFolder, testReportName);
+	}
+
+	@BeforeTest
+	@Parameters({ "noOfPassengers", "expectedPrice" })
+	public void beforeEachTestClass(String noOfPassengers, String expectedPrice)
+			throws MalformedURLException, MyException {
+
+		bFactory = BrowserFactory.getInstance();
+
+		driver = bFactory.getDriver(browserType, hubURL).launch(browserName);
+		// driver = bFactory.getDriver(browserType, driverFilePath).launch(browserName);
+		browser.set(driver);
+
+		page = new HomePage(browser.get());
+		page.maximize();
+		page.waitImplicitlyFor(WAIT_TIME);
+		page.waitTillPageLoadsFor(WAIT_TIME);
+	}
+
+	@AfterTest
+	public void afterEachTestCase() {
+		browser.get().quit();
 	}
 
 }

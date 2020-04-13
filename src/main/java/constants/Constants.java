@@ -34,7 +34,7 @@ public class Constants {
 	public static final String SELECTED = "isSelected";
 	
 	/* <---------- Wait Time Unit ---------> */
-	public static final int WAIT_TIME = 20;
+	public static final int WAIT_TIME = 50;
 	
 	/* <---------- File Extensions ---------> */
 	public static final String IMAGE_EXT = "png";
