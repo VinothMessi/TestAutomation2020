@@ -2,11 +2,13 @@ package base;
 
 import static constants.Constants.WAIT_TIME;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -62,7 +64,10 @@ public class TestBase {
 	public static ExtentReports report;
 
 	@BeforeSuite
-	public void suiteSetUp() throws MyException {
+	public void suiteSetUp() throws MyException, IOException, InterruptedException {
+
+		Runtime.getRuntime().exec("cmd /c start start_Grid.bat");
+		Thread.sleep(10000);
 
 		config = HoldConfigProperties.getInstance();
 
@@ -104,6 +109,13 @@ public class TestBase {
 	@AfterTest
 	public void afterEachTestCase() {
 		browser.get().quit();
+	}
+
+	@AfterSuite
+	public void tearDown() throws IOException, InterruptedException {
+		Runtime.getRuntime().exec("cmd /c start stop_Grid.bat");
+		Thread.sleep(5000);
+		//Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
 	}
 
 }
