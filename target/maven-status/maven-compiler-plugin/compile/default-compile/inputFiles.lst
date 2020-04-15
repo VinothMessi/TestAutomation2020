@@ -2,10 +2,12 @@ C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\browse
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\browser\IDriver.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\browser\LocalDriver.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\properties\HoldConfigProperties.java
-C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\browser\RemoteDriver.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\exception\MyException.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\properties\LoadConfigProperties.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\snapShot\TakeSnapShot.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\util\Util.java
+C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\browser\RemoteDriver.java
+C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\excel\ExcelReader.java
+C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\excel\ExcelUtility.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\report\ReportManager.java
 C:\Automation_Testing_2020\myProjects\AutomationTesting2020\src\main\java\constants\Constants.java

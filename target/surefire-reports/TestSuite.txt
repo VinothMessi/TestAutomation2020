@@ -1,4 +1,68 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 37.006 s - in TestSuite
+Tests run: 20, Failures: 16, Errors: 0, Skipped: 0, Time elapsed: 94.408 s <<< FAILURE! - in TestSuite
+testcases.SanityTest.user_Registration  Time elapsed: 70.62 s  <<< FAILURE!
+exception.MyException: Failed To Click On:By.name: register
+	at testcases.SanityTest.user_Registration(SanityTest.java:39)
+
+testcases.SanityTest.confirm_User_Registration  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.confirm_User_Registration(SanityTest.java:44)
+
+testcases.SanityTest.flight_Reservation  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Reservation(SanityTest.java:50)
+
+testcases.SanityTest.flight_Confirmation  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Confirmation(SanityTest.java:58)
+
+testcases.SanityTest.user_Registration  Time elapsed: 0.639 s  <<< FAILURE!
+exception.MyException: Failed To Click On:By.name: register
+	at testcases.SanityTest.user_Registration(SanityTest.java:39)
+
+testcases.SanityTest.confirm_User_Registration  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.confirm_User_Registration(SanityTest.java:44)
+
+testcases.SanityTest.flight_Reservation  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Reservation(SanityTest.java:50)
+
+testcases.SanityTest.flight_Confirmation  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Confirmation(SanityTest.java:58)
+
+testcases.SanityTest.user_Registration  Time elapsed: 5.348 s  <<< FAILURE!
+exception.MyException: Failed To Click On:By.name: register
+	at testcases.SanityTest.user_Registration(SanityTest.java:39)
+
+testcases.SanityTest.confirm_User_Registration  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.confirm_User_Registration(SanityTest.java:44)
+
+testcases.SanityTest.flight_Reservation  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Reservation(SanityTest.java:50)
+
+testcases.SanityTest.flight_Confirmation  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Confirmation(SanityTest.java:58)
+
+testcases.SanityTest.user_Registration  Time elapsed: 0.391 s  <<< FAILURE!
+exception.MyException: Failed To Click On:By.name: register
+	at testcases.SanityTest.user_Registration(SanityTest.java:39)
+
+testcases.SanityTest.confirm_User_Registration  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.confirm_User_Registration(SanityTest.java:44)
+
+testcases.SanityTest.flight_Reservation  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Reservation(SanityTest.java:50)
+
+testcases.SanityTest.flight_Confirmation  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at testcases.SanityTest.flight_Confirmation(SanityTest.java:58)
+

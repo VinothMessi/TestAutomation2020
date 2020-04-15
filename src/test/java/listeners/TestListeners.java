@@ -76,9 +76,9 @@ public class TestListeners extends TestBase implements ITestListener {
 					.fail("<details>" + "<summary>" + "<b>" + "<font color=red>"
 							+ "Exception Occurred: Click to see details: " + "</font>" + "</b>" + "</summary>"
 							+ exceptionMessage.replaceAll(",", "<br>") + "</details>" + " \n");
-			
+
 			try {
-				String path = page.takeASnapAndSaveAs(snapShotFolder, methodName + ".png");
+				String path = snap.get().saveAs(methodName + "_" + Thread.currentThread().getId() + ".png");
 				testCase.get().fail("<b>" + "<font color=red>" + "Screenshot of failure" + "</font>" + "</b>",
 						MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 			} catch (Exception e) {

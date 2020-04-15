@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Test_Automation_2020]" parallel="tests">
+  <listeners>
+    <listener class-name="listeners.TestListeners"/>
+  </listeners>
+  <test thread-count="4" verbose="0" name="Book Flight for 2 Passengers(failed)" parallel="tests">
+    <parameter name="expectedPrice" value="$1169 USD"/>
+    <parameter name="noOfPassengers" value="2"/>
+    <classes>
+      <class name="testcases.SanityTest">
+        <methods>
+          <include name="confirm_User_Registration"/>
+          <include name="afterEachTestCase"/>
+          <include name="beforeEachTestClass"/>
+          <include name="setUp_Parameters"/>
+          <include name="suiteSetUp"/>
+          <include name="flight_Reservation"/>
+          <include name="user_Registration"/>
+          <include name="tearDown"/>
+          <include name="flight_Confirmation"/>
+        </methods>
+      </class> <!-- testcases.SanityTest -->
+    </classes>
+  </test> <!-- Book Flight for 2 Passengers(failed) -->
+  <test thread-count="4" verbose="0" name="Book Flight for 4 Passengers(failed)" parallel="tests">
+    <parameter name="expectedPrice" value="$2338 USD"/>
+    <parameter name="noOfPassengers" value="4"/>
+    <classes>
+      <class name="testcases.SanityTest">
+        <methods>
+          <include name="confirm_User_Registration"/>
+          <include name="afterEachTestCase"/>
+          <include name="beforeEachTestClass"/>
+          <include name="setUp_Parameters"/>
+          <include name="suiteSetUp"/>
+          <include name="flight_Reservation"/>
+          <include name="user_Registration"/>
+          <include name="tearDown"/>
+          <include name="flight_Confirmation"/>
+        </methods>
+      </class> <!-- testcases.SanityTest -->
+    </classes>
+  </test> <!-- Book Flight for 4 Passengers(failed) -->
+  <test thread-count="4" verbose="0" name="Book Flight for 1 Passenger(failed)" parallel="tests">
+    <parameter name="expectedPrice" value="$584 USD"/>
+    <parameter name="noOfPassengers" value="1"/>
+    <classes>
+      <class name="testcases.SanityTest">
+        <methods>
+          <include name="confirm_User_Registration"/>
+          <include name="afterEachTestCase"/>
+          <include name="beforeEachTestClass"/>
+          <include name="setUp_Parameters"/>
+          <include name="suiteSetUp"/>
+          <include name="flight_Reservation"/>
+          <include name="user_Registration"/>
+          <include name="tearDown"/>
+          <include name="flight_Confirmation"/>
+        </methods>
+      </class> <!-- testcases.SanityTest -->
+    </classes>
+  </test> <!-- Book Flight for 1 Passenger(failed) -->
+  <test thread-count="4" verbose="0" name="Book Flight for 3 Passengers(failed)" parallel="tests">
+    <parameter name="expectedPrice" value="$1753 USD"/>
+    <parameter name="noOfPassengers" value="3"/>
+    <classes>
+      <class name="testcases.SanityTest">
+        <methods>
+          <include name="confirm_User_Registration"/>
+          <include name="afterEachTestCase"/>
+          <include name="beforeEachTestClass"/>
+          <include name="setUp_Parameters"/>
+          <include name="suiteSetUp"/>
+          <include name="flight_Reservation"/>
+          <include name="user_Registration"/>
+          <include name="tearDown"/>
+          <include name="flight_Confirmation"/>
+        </methods>
+      </class> <!-- testcases.SanityTest -->
+    </classes>
+  </test> <!-- Book Flight for 3 Passengers(failed) -->
+</suite> <!-- Failed suite [Test_Automation_2020] -->

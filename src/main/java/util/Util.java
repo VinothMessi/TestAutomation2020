@@ -152,7 +152,7 @@ public class Util {
 		} catch (Exception e) {
 			throw new MyException("Unable to create new directory:" + dir);
 		}
-		return dir;
+		return dir + "";
 	}
 	
 	public static boolean verify(String filePath, String fileName, String fileExtension) throws MyException {

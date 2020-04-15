@@ -447,7 +447,6 @@ public class BasePage {
 	public String takeASnapAndSaveAs(String snapShotDirectory, String snapShotName) throws IOException, MyException {
 		StringBuilder path = null;
 		try {
-			System.out.println("Inside Take snap shot method");
 			Util.verify(snapShotDirectory, snapShotName, IMAGE_EXT);
 			path = new StringBuilder().append(snapShotDirectory).append("//").append(snapShotName);
 			System.out.println("Snap shot path:" + path);

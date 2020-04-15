@@ -7,6 +7,7 @@ public class Constants {
 	private Constants() {
 	}
 	
+	public static final String PROJECT_PATH = System.getProperty("user.dir");
 	public static final String OS = System.getProperty("os.name");
 	public static final String SELENIUM_VERSION = "3.141.59";
 	
@@ -34,7 +35,7 @@ public class Constants {
 	public static final String SELECTED = "isSelected";
 	
 	/* <---------- Wait Time Unit ---------> */
-	public static final int WAIT_TIME = 50;
+	public static final int WAIT_TIME = 5;
 	
 	/* <---------- File Extensions ---------> */
 	public static final String IMAGE_EXT = "png";
