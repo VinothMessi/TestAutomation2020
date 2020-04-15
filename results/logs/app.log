@@ -1,48 +1,48 @@
-00:02:33.212 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 1 Passenger
-00:02:33.212 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 4 Passengers
-00:02:33.212 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 2 Passengers
-00:02:33.212 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 3 Passengers
-00:02:33.227 INFO  AutomationTesting2020 -confirm_User_Registration
-00:02:33.227 INFO  AutomationTesting2020 -confirm_User_Registration
-00:02:33.227 INFO  AutomationTesting2020 -confirm_User_Registration
-00:02:33.227 INFO  AutomationTesting2020 -flight_Confirmation
-00:02:33.227 INFO  AutomationTesting2020 -flight_Reservation
-00:02:33.227 INFO  AutomationTesting2020 -open_Registration
-00:02:33.227 INFO  AutomationTesting2020 -flight_Confirmation
-00:02:33.231 INFO  AutomationTesting2020 -user_Registration
-00:02:33.227 INFO  AutomationTesting2020 -confirm_User_Registration
-00:02:33.227 INFO  AutomationTesting2020 -flight_Confirmation
-00:02:33.231 INFO  AutomationTesting2020 -flight_Confirmation
-00:02:33.231 INFO  AutomationTesting2020 -flight_Reservation
-00:02:33.231 INFO  AutomationTesting2020 -flight_Reservation
-00:02:33.231 INFO  AutomationTesting2020 -open_Registration
-00:02:33.231 INFO  AutomationTesting2020 -flight_Reservation
-00:02:33.231 INFO  AutomationTesting2020 -open_Registration
-00:02:33.231 INFO  AutomationTesting2020 -user_Registration
-00:02:33.231 INFO  AutomationTesting2020 -user_Registration
-00:02:33.231 INFO  AutomationTesting2020 -open_Registration
-00:02:33.232 INFO  AutomationTesting2020 -user_Registration
-00:02:38.702 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
-00:02:38.790 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
-00:02:38.808 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
-00:02:38.876 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
-00:02:47.636 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: user_Registration
-00:02:47.712 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: user_Registration
-00:02:47.762 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: user_Registration
-00:02:47.852 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: user_Registration
-00:02:48.847 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: confirm_User_Registration
-00:02:48.921 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: confirm_User_Registration
-00:02:48.987 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: confirm_User_Registration
-00:02:49.063 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: confirm_User_Registration
-00:02:52.408 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Reservation
-00:02:52.482 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Reservation
-00:02:52.579 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Reservation
-00:02:52.588 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Reservation
-00:02:53.765 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Confirmation
-00:02:53.820 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Confirmation
-00:02:53.853 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 4 Passengers
-00:02:53.891 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 3 Passengers
-00:02:53.915 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Confirmation
-00:02:53.978 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: flight_Confirmation
-00:02:53.985 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 1 Passenger
-00:02:54.051 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 2 Passengers
+17:53:34.011 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 1 Passenger
+17:53:34.011 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 2 Passengers
+17:53:34.011 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 4 Passengers
+17:53:34.011 INFO  AutomationTesting2020 -onStart -> Test Tag Name: Book Flight for 3 Passengers
+17:53:34.019 INFO  AutomationTesting2020 -confirm_User_Registration
+17:53:34.019 INFO  AutomationTesting2020 -confirm_User_Registration
+17:53:34.019 INFO  AutomationTesting2020 -confirm_User_Registration
+17:53:34.019 INFO  AutomationTesting2020 -confirm_User_Registration
+17:53:34.019 INFO  AutomationTesting2020 -flight_Confirmation
+17:53:34.019 INFO  AutomationTesting2020 -flight_Confirmation
+17:53:34.022 INFO  AutomationTesting2020 -flight_Reservation
+17:53:34.019 INFO  AutomationTesting2020 -flight_Confirmation
+17:53:34.022 INFO  AutomationTesting2020 -flight_Confirmation
+17:53:34.023 INFO  AutomationTesting2020 -flight_Reservation
+17:53:34.023 INFO  AutomationTesting2020 -flight_Reservation
+17:53:34.023 INFO  AutomationTesting2020 -flight_Reservation
+17:53:34.023 INFO  AutomationTesting2020 -open_Registration
+17:53:34.023 INFO  AutomationTesting2020 -open_Registration
+17:53:34.023 INFO  AutomationTesting2020 -open_Registration
+17:53:34.023 INFO  AutomationTesting2020 -user_Registration
+17:53:34.023 INFO  AutomationTesting2020 -open_Registration
+17:53:34.023 INFO  AutomationTesting2020 -user_Registration
+17:53:34.023 INFO  AutomationTesting2020 -user_Registration
+17:53:34.023 INFO  AutomationTesting2020 -user_Registration
+17:53:42.392 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
+17:53:42.628 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
+17:53:43.575 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
+17:53:43.694 INFO  AutomationTesting2020 -onTestSuccess -> Test Method Name: open_Registration
+17:53:51.232 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: user_Registration
+17:53:51.648 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: confirm_User_Registration
+17:53:51.738 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: user_Registration
+17:53:52.043 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Reservation
+17:53:52.139 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: confirm_User_Registration
+17:53:52.269 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: user_Registration
+17:53:52.453 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Confirmation
+17:53:52.530 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Reservation
+17:53:52.604 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: user_Registration
+17:53:52.689 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: confirm_User_Registration
+17:53:52.957 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Confirmation
+17:53:53.095 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: confirm_User_Registration
+17:53:53.127 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Reservation
+17:53:53.531 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Reservation
+17:53:53.562 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Confirmation
+17:53:53.724 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 1 Passenger
+17:53:53.918 INFO  AutomationTesting2020 -onTestFailure -> Test Method Name: flight_Confirmation
+17:53:54.161 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 4 Passengers
+17:53:55.054 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 3 Passengers
+17:53:55.178 INFO  AutomationTesting2020 -onFinish -> Test Tag Name: Book Flight for 2 Passengers
